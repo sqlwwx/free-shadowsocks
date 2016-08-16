@@ -1,0 +1,23 @@
+{
+  "name": "free-shadowsocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "free-shadowsocks": "bin/free-shadowsocks"
+  },
+  "author": "sqlwwx <wwx_2012@live.com>",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "commander": "^2.9.0",
+    "superagent": "^2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sqlwwx/free-shadowsocks.git"
+  }
+}

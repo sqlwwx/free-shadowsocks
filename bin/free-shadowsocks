@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+require('commander')
+  .version(require('../package').version)
+  .parse(process.argv)
+
+require('..')().then(function (freeShadowsocks) {
+  console.log(freeShadowsocks)
+}, function (error) {
+  console.error(freeShadowsocks)
+})
