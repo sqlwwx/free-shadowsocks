@@ -1,10 +1,10 @@
 {
   "name": "free-shadowsocks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "update-authors": "git log --format='%aN <%aE>' | sort -u > AUTHORS"
   },
   "bin": {
     "free-shadowsocks": "bin/free-shadowsocks"
@@ -12,12 +12,18 @@
   "author": "sqlwwx <wwx_2012@live.com>",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^0.20.0",
+    "cheerio": "^0.22.0",
     "commander": "^2.9.0",
     "superagent": "^2.2.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sqlwwx/free-shadowsocks.git"
-  }
+  },
+  "keywords": [
+    "free",
+    "shadowsocks",
+    "workflow",
+    "cli"
+  ]
 }
