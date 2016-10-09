@@ -33,7 +33,7 @@ function loadFreeShadowsocks () {
   let freeShadowsocks = []
   return superagent.get(url).then(function (res){
     let $ = cherrio.load(res.text)
-    $('#free .container .row > .col-lg-4').each(function(i, elem) {
+    $('#free .container .row:nth-child(2) > .col-sm-4').each(function(i, elem) {
       freeShadowsocks.push(
         parseServer(
           $(this).text().trim()

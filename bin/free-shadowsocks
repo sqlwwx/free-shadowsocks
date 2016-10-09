@@ -1,11 +1,24 @@
 #!/usr/bin/env node
 
+var Table = require('cli-table');
+var _ = require('lodash')
+
+const printResult = (result) => {
+  let table = new Table({
+    head: ['server', 'port', 'password', 'method']
+  })
+  result.forEach((freeShadowsock) => {
+    table.push(_.values(freeShadowsock))
+  })
+  console.log(table.toString())
+}
+
 require('commander')
   .version(require('../package').version)
   .parse(process.argv)
 
-require('..')().then(function (freeShadowsocks) {
-  console.log(freeShadowsocks)
-}, function (error) {
-  console.error(freeShadowsocks)
+require('..')().then((freeShadowsocks) => {
+  printResult(freeShadowsocks)
+}, (err) => {
+  console.error(err)
 })
