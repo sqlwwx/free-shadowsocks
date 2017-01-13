@@ -8,9 +8,11 @@ const template = (server) => ({
 })
 
 module.exports = (pluginContext) => {
-  return freeShadowsocks().then((servers) => {
-    return Promise.resolve(
-      servers.map(template)
-    )
-  })
+  return () => {
+    return freeShadowsocks().then((servers) => {
+      return Promise.resolve(
+        servers.map(template)
+      )
+    })
+  }
 }

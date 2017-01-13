@@ -1,11 +1,14 @@
 {
-  "name": "Demo Plugin",
+  "name": "free-shadowsocks",
+  "version": "0.0.1",
+  "description": "free-shadowsocks",
   "blocks": {
     "input": [
       {
         "type": "PrefixScript",
-        "prefix": "free-shadowsocks",
+        "prefix": "free",
         "space": false,
+        "args": "None",
         "script": "zazu-entry.js",
         "connections": [
           "copy"
