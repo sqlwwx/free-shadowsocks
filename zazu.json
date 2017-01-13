@@ -1,0 +1,23 @@
+{
+  "name": "Demo Plugin",
+  "blocks": {
+    "input": [
+      {
+        "type": "PrefixScript",
+        "prefix": "free-shadowsocks",
+        "space": false,
+        "script": "zazu-entry.js",
+        "connections": [
+          "copy"
+        ]
+      }
+    ],
+    "output": [
+      {
+        "id": "copy",
+        "type": "CopyToClipboard",
+        "text": "{value}"
+      }
+    ]
+  }
+}
