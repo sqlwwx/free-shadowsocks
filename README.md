@@ -21,3 +21,5 @@ npm install -g free-shadowsocks
 │ jpa.iss.tf │ 10000 │ 57198707 │ aes-256-cfb │
 └────────────┴───────┴──────────┴─────────────┘
 ```
+
+thanks to http://fast.ishadow.online/
