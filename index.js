@@ -1,22 +1,24 @@
 const superagent = require('superagent')
 const cherrio = require('cheerio')
 
-const url = 'http://www.ishadowsocks.org/'
+const url = 'http://fast.ishadow.online/'
+const select = '.portfolio-items .portfolio-item'
+const splitStr = '\r\n'
+// const select = '#free .container .row:nth-child(2) > .col-sm-4'
 const translator= {
-  'A服务器地址': 'server',
-  'B服务器地址': 'server',
-  'C服务器地址': 'server',
-  '端口': 'server_port',
-  'A密码': 'password',
-  'B密码': 'password',
-  'C密码': 'password',
-  '加密方式': 'method'
+  'IP Address': 'server',
+  'Port': 'server_port',
+  'Password': 'password',
+  'Method': 'method'
 }
 
 function parseServer (str) {
   let server = {}
-  str.split('\n').forEach(function (s) {
+  str.split('\r\n').forEach(function (s) {
     let kv = s.split(':')
+    if (kv.length === 1) {
+      kv = s.split('：')
+    }
     if (kv.length > 1) {
       let key = kv[0].trim()
       let val = kv[1].trim()
@@ -33,7 +35,7 @@ function loadFreeShadowsocks () {
   let freeShadowsocks = []
   return superagent.get(url).then(function (res){
     let $ = cherrio.load(res.text)
-    $('#free .container .row:nth-child(2) > .col-sm-4').each(function(i, elem) {
+    $(select).each(function(i, elem) {
       freeShadowsocks.push(
         parseServer(
           $(this).text().trim()
