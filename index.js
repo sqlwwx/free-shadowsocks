@@ -1,7 +1,7 @@
 const superagent = require('superagent')
 const cherrio = require('cheerio')
 
-const url = 'http://fast.ishadow.online/'
+const url = 'http://ss.ishadowx.com/'
 const select = '.portfolio-items .portfolio-item'
 const splitStr = '\r\n'
 // const select = '#free .container .row:nth-child(2) > .col-sm-4'
