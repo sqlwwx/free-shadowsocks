@@ -1,16 +1,31 @@
 #!/usr/bin/env node
 
 var Table = require('cli-table');
-var _ = require('lodash')
+var _ = require('lodash');
+var qrcode = require('qrcode');
 
 const printResult = (result) => {
   let table = new Table({
-    head: ['server', 'port', 'password', 'method']
+    head: ['server', 'port', 'password', 'method', 'qrcode']
   })
-  result.forEach((freeShadowsock) => {
-    table.push(_.values(freeShadowsock))
+  Promise.all(result.map((freeShadowsock) => {
+    return new Promise((resolve) => {
+      let { server, serverPort, password, method } = freeShadowsock
+      const url = `ss://${Buffer.from(method + ':' + password + '@' + server + ':' + serverPort).toString('base64')}`
+      qrcode.toString(url, { type: 'terminal' }, (err, qrcode) => {
+        table.push([
+          server,
+          serverPort,
+          password,
+          method,
+          qrcode
+        ])
+        resolve()
+      })
+    })
+  })).then(() => {
+    console.log(table.toString())
   })
-  console.log(table.toString())
 }
 
 require('commander')

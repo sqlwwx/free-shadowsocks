@@ -7,7 +7,7 @@ const splitStr = '\r\n'
 // const select = '#free .container .row:nth-child(2) > .col-sm-4'
 const translator= {
   'IP Address': 'server',
-  'Port': 'server_port',
+  'Port': 'serverPort',
   'Password': 'password',
   'Method': 'method'
 }
