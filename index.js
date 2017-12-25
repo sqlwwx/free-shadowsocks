@@ -6,8 +6,8 @@ const select = '.portfolio-items .portfolio-item'
 
 // const select = '#free .container .row:nth-child(2) > .col-sm-4'
 const translator = {
-  'IP Address': 'server',
-  'Port': 'server_port',
+  'IP Address': 'address',
+  'Port': 'port',
   'Password': 'password',
   'Method': 'method'
 }

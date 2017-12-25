@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-var Table = require('cli-table');
+var Table = require('cli-table')
 var _ = require('lodash')
 
 const printResult = (result) => {
   let table = new Table({
-    head: ['server', 'port', 'password', 'method']
+    head: ['address', 'port', 'password', 'method']
   })
   result.forEach((freeShadowsock) => {
     table.push(_.values(freeShadowsock))

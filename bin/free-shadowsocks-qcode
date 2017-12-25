@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+var qrcode = require('qrcode')
+
+const printResult = (result) => {
+  result.map((freeShadowsock) => {
+    let { address, port, password, method } = freeShadowsock
+    const url = `ss://${Buffer.from(method + ':' + password + '@' + address + ':' + port).toString('base64')}`
+    qrcode.toString(url, { type: 'terminal' }, (err, qrcode) => {
+      if (err) {
+        console.error(err)
+      } else {
+        console.log(`${address} \n${qrcode}`)
+      }
+    })
+  })
+}
+
+require('commander')
+  .version(require('../package').version)
+  .parse(process.argv)
+
+require('..')().then((freeShadowsocks) => {
+  printResult(freeShadowsocks)
+}, (err) => {
+  console.error(err)
+})
