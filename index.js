@@ -3,21 +3,21 @@ const cherrio = require('cheerio')
 
 const url = 'http://ss.ishadowx.com/'
 const select = '.portfolio-items .portfolio-item'
-const splitStr = '\r\n'
+
 // const select = '#free .container .row:nth-child(2) > .col-sm-4'
-const translator= {
+const translator = {
   'IP Address': 'server',
   'Port': 'server_port',
   'Password': 'password',
   'Method': 'method'
 }
 
-function parseServer (str) {
+function parseServer (serverStr) {
   let server = {}
-  str.split('\r\n').forEach(function (s) {
-    let kv = s.split(':')
+  serverStr.split('\n').forEach(function (line) {
+    let kv = line.split(':')
     if (kv.length === 1) {
-      kv = s.split('：')
+      kv = line.split('：')
     }
     if (kv.length > 1) {
       let key = kv[0].trim()
@@ -33,9 +33,9 @@ function parseServer (str) {
 
 function loadFreeShadowsocks () {
   let freeShadowsocks = []
-  return superagent.get(url).then(function (res){
+  return superagent.get(url).then(function (res) {
     let $ = cherrio.load(res.text)
-    $(select).each(function(i, elem) {
+    $(select).each(function (i, elem) {
       freeShadowsocks.push(
         parseServer(
           $(this).text().trim()
