@@ -1,5 +1,7 @@
 # free-shadowsocks
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/sqlwwx/free-shadowsocks.svg)](https://greenkeeper.io/)
+
 抓取Ishadowsocks的免费SS信息。
 
 ## install
