@@ -2,12 +2,9 @@ sudo: false
 language: node_js
 node_js:
   - 10
-cache:
-  directories:
-    - node_modules
-before_script:
-  - npm prune
+cache: yarn
+install:
+  - yarn install
 script:
-  - ls ./node_modules/.bin
   - npm run lint
   - npm run test-cov
