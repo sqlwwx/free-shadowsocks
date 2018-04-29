@@ -8,5 +8,6 @@ cache:
 before_script:
   - npm prune
 script:
+  - ls ./node_modules/.bin
   - npm run lint
   - npm run test-cov
