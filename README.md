@@ -1,5 +1,6 @@
 # free-shadowsocks
 
+[![Build Status](https://travis-ci.org/sqlwwx/free-shadowsocks.svg?branch=master)](https://travis-ci.org/sqlwwx/free-shadowsocks)
 [![Greenkeeper badge](https://badges.greenkeeper.io/sqlwwx/free-shadowsocks.svg)](https://greenkeeper.io/)
 
 抓取Ishadowsocks的免费SS信息。
