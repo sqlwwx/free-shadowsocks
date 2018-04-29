@@ -25,4 +25,7 @@ npm install -g free-shadowsocks
 └────────────┴───────┴──────────┴─────────────┘
 ```
 
+[![asciicast](https://asciinema.org/a/DGR3zaEBq1QaLtripprc5RRoM.png)](https://asciinema.org/a/DGR3zaEBq1QaLtripprc5RRoM)
+
 thanks to http://fast.ishadow.online/
+
